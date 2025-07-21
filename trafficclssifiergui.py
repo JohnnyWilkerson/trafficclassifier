@@ -64,7 +64,7 @@ def classifysign(path):
     sign = sign_list[pred_class]
     print(pred_class)
     print(sign)
-    result.configure(text = sign)
+    result.configure(text = sign, bg = 'purple')
 
 def button_classify(path):
     classifybtn = Button(root, text = "Classify Image", command = lambda: classifysign(path))
@@ -73,7 +73,7 @@ def button_classify(path):
 def upload_image():
     path = filedialog.askopenfilename()
     img = Image.open(path)
-    img = img.thumbnail(((root.winfo_width/2.25),(root.winfo_height/2.25)))
+    img.thumbnail(((root.winfo_width()/2.25),(root.winfo_height()/2.25)))
     tkimg = ImageTk.PhotoImage(img)
     imgdisplay.configure(image = tkimg)
     imgdisplay.image = tkimg
